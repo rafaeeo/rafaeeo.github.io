@@ -1,33 +1,84 @@
+/* Variáveis de cores e fontes */
+:root {
+  --primary-color: #333;
+  --secondary-color: #007bff;
+  --secondary-hover: #0056b3;
+  --background-color: #f4f4f4;
+  --card-background: #fff;
+  --header-background: #333;
+  --header-text: #fff;
+  --font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Reset básico e box-sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilos globais */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  color: var(--primary-color);
+  line-height: 1.6;
 }
 
+/* Cabeçalho */
 header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
+  background-color: var(--header-background);
+  color: var(--header-text);
+  padding: 40px 20px;
+  text-align: center;
 }
 
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* Conteúdo principal centralizado */
+main {
+  max-width: 960px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+/* Seções com estilo de card */
 section {
-    padding: 20px;
-    margin: 20px;
-    background-color: #fff;
-    border-radius: 5px;
+  background-color: var(--card-background);
+  border-radius: 8px;
+  padding: 30px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Cabeçalhos das seções */
 h1, h2 {
-    color: #333;
+  color: var(--primary-color);
 }
 
+h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  border-bottom: 2px solid var(--secondary-color);
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+/* Links */
 a {
-    color: #007bff;
-    text-decoration: none;
+  color: var(--secondary-color);
+  transition: color 0.3s ease;
 }
 
 a:hover {
-    text-decoration: underline;
+  color: var(--secondary-hover);
+  text-decoration: underline;
 }
