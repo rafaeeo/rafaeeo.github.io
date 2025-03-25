@@ -61,7 +61,7 @@ section {
 
 /* Cabeçalhos das seções */
 h1, h2 {
-  color: var(--primary-color);
+  color: var(--background-color);
 }
 
 h2 {
