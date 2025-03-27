@@ -12,8 +12,10 @@
     href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" 
     rel="stylesheet"
   >
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+  
   <style>
     /* Reset básico */
     * {
@@ -561,14 +563,14 @@ Principais responsabilidades:
   document.getElementById('download-pdf').addEventListener('click', () => {
     const { jsPDF } = window.jspdf;
     const pdf = new jsPDF();
-
-    // Captura o conteúdo da página
-    const content = document.body;
-
+  
+    // Captura apenas o conteúdo principal
+    const content = document.querySelector('.main-content');
+  
     // Adiciona o conteúdo ao PDF
     pdf.html(content, {
       callback: function (doc) {
-        doc.save('portfolio.pdf'); // Salva o PDF com o nome "portfolio.pdf"
+        doc.save('portfolio_Rafael_ALmeida.pdf'); // Salva o PDF com o nome "portfolio.pdf"
       },
       x: 10,
       y: 10
