@@ -261,6 +261,19 @@
       }
     }
 
+    @media print {
+      body {
+        background-color: #fff;
+        color: #000;
+      }
+      .sidebar {
+        display: none; /* Oculta a barra lateral no PDF */
+      }
+      .main-content {
+        width: 100%; /* Expande o conteúdo principal */
+      }
+    }
+
   </style>
 </head>
 <body>
