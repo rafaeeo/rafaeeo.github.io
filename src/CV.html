@@ -13,267 +13,196 @@
     rel="stylesheet"
   >
   
-  <style>
-    /* Reset básico */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    body {
-      font-family: 'Roboto', sans-serif;
-      background-color: #f4f4f4;
-      color: #333;
-      line-height: 1.6;
-      padding: 20px;
-    }
+<style>
+  /* Reset básico */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-    /* Container geral */
+  body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+  }
+
+  /* Container geral */
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Barra lateral (esquerda) */
+  .sidebar {
+    width: 30%;
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+  }
+
+  .social-media a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.2em;
+    margin-right: 15px;
+    transition: color 0.3s;
+  }
+
+  .social-media a:hover {
+    color: #3498db; /* Cor ao passar o mouse */
+  }
+
+  .profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 3px solid #fff;
+  }
+
+  .name-title {
+    font-size: 1.6em;
+    font-weight: 700;
+    margin-bottom: 5px;
+  }
+
+  .job-title {
+    font-size: 1em;
+    font-weight: 300;
+    margin-bottom: 20px;
+  }
+
+  .contact, .social-media {
+    margin-top: 20px;
+    width: 100%;
+    text-align: left;
+  }
+
+  .contact h3, .social-media h3 {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    border-bottom: 1px solid #fff;
+    display: inline-block;
+    padding-bottom: 5px;
+  }
+
+  .contact p, .social-media p {
+    margin-bottom: 8px;
+    font-size: 0.95em;
+    color: #ddd;
+  }
+
+  /* Conteúdo principal (direita) */
+  .main-content {
+    width: 70%;
+    padding: 20px;
+  }
+
+  .section {
+    margin-bottom: 30px;
+  }
+
+  .section h2 {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+    position: relative;
+    font-weight: 700;
+    color: #333;
+  }
+
+  .section h2::after {
+    content: "";
+    width: 50px;
+    height: 3px;
+    background-color: #3498db;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+  }
+
+  .section p {
+    margin-top: 10px;
+    font-size: 0.95em;
+  }
+
+  .section ul {
+    list-style: none;
+    margin-top: 15px;
+  }
+
+  .section ul li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+  }
+
+  .section ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #3498db;
+  }
+
+  .project-preview {
+    width: 100%; /* Faz a imagem ocupar toda a largura do card */
+    max-height: 150px; /* Define uma altura máxima para a imagem */
+    object-fit: cover; /* Garante que a imagem seja redimensionada proporcionalmente */
+    margin-top: 10px; /* Espaço entre a descrição e a imagem */
+    border-radius: 5px; /* Opcional: Adiciona bordas arredondadas */
+  }
+
+  /* Grade para projetos ou habilidades */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .card {
+    background-color: #fafafa;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 15px;
+  }
+
+  .card h4 {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #333;
+  }
+
+  .card p {
+    font-size: 0.9em;
+    color: #555;
+  }
+
+  /* Responsividade */
+  @media (max-width: 768px) {
     .container {
-      max-width: 1000px;
-      margin: 0 auto;
-      background-color: #fff;
-      display: flex;
-      flex-direction: row;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-
-    /* Barra lateral (esquerda) */
-    .sidebar {
-      width: 30%;
-      background-color: #1a1a1a;
-      color: #fff;
-      padding: 20px;
-      display: flex;
       flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
-      text-align: center;
     }
-
-    .social-media a {
-      text-decoration: none;
-      color: #333;
-      font-size: 1.2em;
-      margin-right: 15px;
-      transition: color 0.3s;
-    }
-    
-    .social-media a:hover {
-      color: #3498db; /* Cor ao passar o mouse */
-    }
-
-    .profile-pic {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 20px;
-      border: 3px solid #fff;
-    }
-
-    .name-title {
-      font-size: 1.6em;
-      font-weight: 700;
-      margin-bottom: 5px;
-    }
-
-    .job-title {
-      font-size: 1em;
-      font-weight: 300;
-      margin-bottom: 20px;
-    }
-
-    .contact, .social-media {
-      margin-top: 20px;
+    .sidebar, .main-content {
       width: 100%;
-      text-align: left;
     }
+  }
 
-    .contact h3, .social-media h3 {
-      margin-bottom: 10px;
-      font-size: 1.1em;
-      border-bottom: 1px solid #fff;
-      display: inline-block;
-      padding-bottom: 5px;
-    }
-
-    .contact p, .social-media p {
-      margin-bottom: 8px;
-      font-size: 0.95em;
-      color: #ddd;
-    }
-
-    /* Conteúdo principal (direita) */
-    .main-content {
-      width: 70%;
-      padding: 20px;
-    }
-
-    .section {
-      margin-bottom: 30px;
-    }
-
-    .section h2 {
-      font-size: 1.4em;
-      margin-bottom: 10px;
-      position: relative;
-      font-weight: 700;
-      color: #333;
-    }
-
-    .section h2::after {
-      content: "";
-      width: 50px;
-      height: 3px;
-      background-color: #3498db;
-      position: absolute;
-      left: 0;
-      bottom: -5px;
-    }
-
-    .section p {
-      margin-top: 10px;
-      font-size: 0.95em;
-    }
-
-    .section ul {
-      list-style: none;
-      margin-top: 15px;
-    }
-
-    .section ul li {
-      margin-bottom: 10px;
-      padding-left: 20px;
-      position: relative;
-    }
-
-    .section ul li::before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      color: #3498db;
-    }
-
-    .project-preview {
-      width: 100%; /* Faz a imagem ocupar toda a largura do card */
-      max-height: 150px; /* Define uma altura máxima para a imagem */
-      object-fit: cover; /* Garante que a imagem seja redimensionada proporcionalmente */
-      margin-top: 10px; /* Espaço entre a descrição e a imagem */
-      border-radius: 5px; /* Opcional: Adiciona bordas arredondadas */
-    }
-
-    .projects-section {
-      max-height: 300px; /* Define a altura máxima da seção */
-      overflow-y: auto; /* Adiciona a barra de rolagem vertical */
-      padding-right: 10px; /* Espaço para evitar que o conteúdo fique muito próximo da barra */
-      border: 1px solid #ddd; /* Opcional: Adiciona uma borda para destacar a área */
-      border-radius: 5px; /* Opcional: Bordas arredondadas */
-      background-color: #f9f9f9; /* Opcional: Fundo claro */
-    }
-
-    /* Remove o sublinhado e ajusta o estilo do link */
-.card-link {
-  text-decoration: none;
-  color: inherit; /* Mantém a cor do texto original */
-  display: block; /* Faz o link ocupar todo o espaço do card */
-}
-
-/* Adiciona o efeito de hover no card */
-.card-link:hover .card {
-  transform: scale(1.05); /* Aumenta o tamanho do card */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Suaviza a transição */
-}
-    
-    .projects-section::-webkit-scrollbar {
-      width: 8px;
-    }
-    
-    .projects-section::-webkit-scrollbar-thumb {
-      background-color: #3498db;
-      border-radius: 4px;
-    }
-    
-    .projects-section::-webkit-scrollbar-track {
-      background-color: #f1f1f1;
-    }
-
-    .experience-section {
-      max-height: 200px; /* Define a altura máxima da seção */
-      overflow-y: auto; /* Adiciona a barra de rolagem vertical */
-      padding-right: 10px; /* Espaço para evitar que o conteúdo fique muito próximo da barra */
-      border: 1px solid #ddd; /* Opcional: Adiciona uma borda para destacar a área */
-      border-radius: 5px; /* Opcional: Bordas arredondadas */
-      background-color: #f9f9f9; /* Opcional: Fundo claro */
-    }
-
-    .experience-section::-webkit-scrollbar {
-      width: 8px;
-    }
-    
-    .experience-section::-webkit-scrollbar-thumb {
-      background-color: #3498db;
-      border-radius: 4px;
-    }
-    
-    .experience-section::-webkit-scrollbar-track {
-      background-color: #f1f1f1;
-    }
-
-    /* Grade para projetos ou habilidades */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 20px;
-    }
-
-    .card {
-      background-color: #fafafa;
-      border: 1px solid #ddd;
-      border-radius: 6px;
-      padding: 15px;
-    }
-
-    .card h4 {
-      margin-bottom: 10px;
-      font-size: 1.1em;
-      font-weight: 600;
-      color: #333;
-    }
-
-    .card p {
-      font-size: 0.9em;
-      color: #555;
-    }
-
-    /* Responsividade */
-    @media (max-width: 768px) {
-      .container {
-        flex-direction: column;
-      }
-      .sidebar, .main-content {
-        width: 100%;
-      }
-    }
-
-    @media print {
-      body {
-        background-color: #fff;
-        color: #000;
-      }
-      .sidebar {
-        display: none; /* Oculta a barra lateral no PDF */
-      }
-      .main-content {
-        width: 100%; /* Expande o conteúdo principal */
-      }
-    }
-
-  </style>
+</style>
 </head>
 <body>
 
@@ -282,7 +211,7 @@
     <!-- Barra lateral -->
     <div class="sidebar">
       <img 
-        src="src/Rafael Almeida.png" 
+        src="Rafael Almeida.png" 
         alt="Foto de Perfil" 
         class="profile-pic"
       >
@@ -306,12 +235,12 @@
         <h3>Redes Sociais</h3>
         <p>
           <a href="https://www.linkedin.com/in/rafael-almeida-417229205/" target="_blank" style="text-decoration: none;">
-            <i class="fab fa-linkedin" style="font-size: 24px; color: #0e76a8;"></i> LinkedIn
+            <i class="fab fa-linkedin" style="font-size: 24px; color: #0e76a8;"></i> linkedin.com/in/rafael-almeida-417229205/
           </a>
         </p>
         <p>
           <a href="https://github.com/rafaeeo" target="_blank" style="text-decoration: none;">
-            <i class="fab fa-github" style="font-size: 24px; color: #333;"></i> GitHub
+            <i class="fab fa-github" style="font-size: 24px; color: #ffffff;"></i> rafaeeo.github.io
           </a>
         </p>
       </div>
@@ -330,61 +259,18 @@
         </p>
       </div>
 
-<!-- Seção: Projetos -->
-<div class="section projects-section">
-  <h2>Principais Projetos</h2>
-  <div class="grid">
-    <a href="https://github.com/rafaeeo/ecommerce_dash_PBI" target="_blank" class="card-link">
-      <div class="card">
-        <h4>Projeto 1: Análise de Vendas</h4>
+      <div class="section">
+        <h2>Resumo Profissional</h2>
         <p>
-          Dashboard interativo em Power BI para acompanhar indicadores de vendas, incluindo 
-          faturamento, ticket médio, taxa de crescimento e visualização dos dados. <br/>
-          <strong>Ferramentas:</strong> Power BI, Excel.
+          Profissional com vasta experiência em elaboração e análise de orçamentos de Engenharia. Familiarizado com a rotina de contratação e gestão de contratos de fornecedores e prestadores de serviços. Conhecimento nas áreas de Data Analytics, Salesforce Development, CRISP-DM e Metodologias Ágeis.
         </p>
-        <img src="src/preview1.jpg" alt="Preview do Projeto 1" class="project-preview">
       </div>
-    </a>
-
-    <a href="https://github.com/rafaeeo/Producao_Sementes" target="_blank" class="card-link">
-      <div class="card">
-        <h4>Projeto 2: Análise Agro</h4>
-        <p>
-          Análise detalhada e dashboard interativo dos dados de produção de sementes que inclui a exploração de variabilidade, a distribuição dos dados e sugestões para planejamento e intervenção. <br/>
-          <strong>Ferramentas:</strong> Python, scikit-learn, Pandas, SQL.
-        </p>
-        <img src="src/preview2.jpg" alt="Preview do Projeto 2" class="project-preview">
-      </div>
-    </a>
-
-    <a href="https://github.com/rafaeeo/Concrete_prediction" target="_blank" class="card-link">
-      <div class="card">
-        <h4>Projeto 3: Predição da Resistência à Compressão do Concreto</h4>
-        <p>
-          Neste projeto analisei o dataset "Concrete Compressive Strength" do UCI Machine Learning Repository para entender os fatores que influenciam a resistência à compressão do concreto e construir um modelo de regressão linear múltipla para prever essa resistência. <br/>
-          <strong>Ferramentas:</strong> Python, scikit-learn, Pandas, MatPlotLib.
-        </p>
-        <img src="src/preview3.jpg" alt="Preview do Projeto 3" class="project-preview">
-      </div>
-    </a>
-
-    <a href="https://github.com/rafaeeo/House_Prices" target="_blank" class="card-link">
-      <div class="card">
-        <h4>Projeto 4: Análise de Fatores que Influenciam os Preços de Imóveis</h4>
-        <p>
-          Este projeto utiliza o dataset "House Prices - São Paulo" do Kaggle para identificar e analisar os fatores que influenciam os preços dos imóveis na cidade de São Paulo. O objetivo é aplicar técnicas de pré-processamento, análise exploratória, modelagem preditiva e avaliação para construir um modelo que explique e preveja os preços dos imóveis. <br/>
-          <strong>Ferramentas:</strong> Python, scikit-learn, Pandas, Seaborn.
-        </p>
-        <img src="src/preview4.jpg" alt="Preview do Projeto 4" class="project-preview">
-      </div>
-    </a>
-  </div>
-</div>
       
       <!-- Seção: Experiência de Trabalho -->
 <div class="section experience-section">
   <h2>Experiência Profissional</h2>
   <ul>
+    <br />
     <li>
       <strong>Bureau Veritas Group</strong> (2023 - 2023)
       <br />
@@ -401,6 +287,7 @@
         <li>Elaborar KPIs e Dashboards de histórico de preços e indicadores.</li>
       </ul>
     </li>
+    <br />
     <li>
       <strong>Grupo EcoRodovias</strong> (2020 - 2022)
       <br />
@@ -417,6 +304,7 @@
         <li>Elaborar controles internos de demandas.</li>
       </ul>
     </li>
+    <br />
     <li>
       <strong>Santo Antonio Energia</strong> (2015 - 2019)
       <br />
@@ -431,6 +319,7 @@
         <li>Elaborar quesitos técnicos e contestações de laudos periciais em processos jurídicos.</li>
       </ul>
     </li>
+    <br />
     <li>
       <strong>Even Construtora e Incorporadora</strong> (2015 - 2015)
       <br />
@@ -443,6 +332,7 @@ Principais responsabilidades:
   <li>Preparar etapas e recursos necessários para condução dos trabalhos sob orientação do engenheiro.</li>
 </ul>
     </li>
+    <br />
     <li>
       <strong>Conp Construtora e Incorporadora</strong> (2012 - 2013)
       <br />
@@ -458,6 +348,7 @@ Principais responsabilidades:
   <li>Realizar visitas técnicas, acompanhamento de obras e atendimento a clientes.</li>
 </ul>
     </li>
+    <br />
     <li>
       <strong>São Paulo Turismo S.A.</strong> (2011 - 2012)
       <br />
@@ -550,8 +441,16 @@ Principais responsabilidades:
   </ul>
 </div>
 
+<!-- Seção: Disponibilidade -->
+<div class="section">
+  <h2>Disponibilidade</h2>
+  <p>
+    Disponível para trabalho remoto ou híbrido 1 vez por semana em São Paulo e região. 
+    Aberto a oportunidades como Analista de Dados, Cientista de Dados ou Desenvolvedor.
+  </p>
+</div>
+
     </div>
   </div>
-
 </body>
 </html>
