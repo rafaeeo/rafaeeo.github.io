@@ -2,598 +2,1053 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <title>Portfólio de Analista de Dados - Rafael Almeida</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"> 
-  <!-- Fonte do Google (opcional) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfólio de Rafael Almeida — Analista de Dados com background em Engenharia Civil. Python, SQL, Power BI, Machine Learning.">
+  <title>Rafael Almeida · Analista de Dados</title>
+ 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link 
-    href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" 
-    rel="stylesheet"
-  >
-  
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+ 
   <style>
-    /* Reset básico */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    :root {
+      --sand-light:  #f5f0e8;
+      --sand-mid:    #ede8dd;
+      --sand-dark:   #d6cfc2;
+      --sand-border: #cbc4b5;
+      --moss-dark:   #2d3a2e;
+      --moss-mid:    #3d4e2e;
+      --moss-light:  #4a5e3a;
+      --moss-muted:  #8fa880;
+      --moss-pale:   #c8d8b0;
+      --ink:         #1e2019;
+      --ink-mid:     #3d3d35;
+      --ink-muted:   #6b6355;
+      --ink-faint:   #9c9484;
+      --accent:      #5c7a3e;
+      --accent-warm: #8fa880;
+      --radius:      10px;
+      --radius-sm:   6px;
     }
-    
+ 
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+ 
     body {
-      font-family: 'Roboto', sans-serif;
-      background-color: #f4f4f4;
-      color: #333;
+      font-family: 'DM Sans', sans-serif;
+      background-color: var(--sand-light);
+      color: var(--ink);
       line-height: 1.6;
-      padding: 20px;
+      min-height: 100vh;
     }
-
-    /* Container geral */
-    .container {
-      max-width: 1000px;
-      margin: 0 auto;
-      background-color: #fff;
+ 
+    /* ── LAYOUT ── */
+    .layout {
       display: flex;
-      flex-direction: row;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      min-height: 100vh;
+      max-width: 1080px;
+      margin: 0 auto;
+      box-shadow: 0 0 40px rgba(0,0,0,0.08);
     }
-
-    /* Barra lateral (esquerda) */
+ 
+    /* ── SIDEBAR ── */
     .sidebar {
-      width: 30%;
-      background-color: #1a1a1a;
-      color: #fff;
-      padding: 20px;
+      width: 272px;
+      flex-shrink: 0;
+      background: var(--moss-dark);
+      padding: 36px 22px;
       display: flex;
       flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
-      text-align: center;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow-y: auto;
     }
-
-    .social-media a {
-      text-decoration: none;
-      color: #333;
-      font-size: 1.2em;
-      margin-right: 15px;
-      transition: color 0.3s;
+ 
+    .sidebar::-webkit-scrollbar { width: 3px; }
+    .sidebar::-webkit-scrollbar-thumb { background: var(--moss-light); border-radius: 2px; }
+ 
+    /* PROFILE */
+    .profile-block { text-align: center; margin-bottom: 28px; }
+ 
+    .avatar-wrap {
+      width: 88px;
+      height: 88px;
+      margin: 0 auto 14px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 2px solid var(--moss-light);
+      background: var(--moss-mid);
     }
-    
-    .social-media a:hover {
-      color: #3498db; /* Cor ao passar o mouse */
-    }
-
-    .profile-pic {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
+ 
+    .avatar-wrap img {
+      width: 100%;
+      height: 100%;
       object-fit: cover;
-      margin-bottom: 20px;
-      border: 3px solid #fff;
+      display: block;
     }
-
-    .name-title {
-      font-size: 1.6em;
-      font-weight: 700;
+ 
+    .avatar-initials {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Lora', Georgia, serif;
+      font-size: 26px;
+      color: var(--moss-pale);
+      background: var(--moss-mid);
+    }
+ 
+    .profile-name {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 1.2rem;
+      color: #e8ead0;
+      margin-bottom: 5px;
+      line-height: 1.3;
+    }
+ 
+    .profile-role {
+      font-size: 0.75rem;
+      color: var(--moss-muted);
+      line-height: 1.5;
+    }
+ 
+    .divider {
+      height: 1px;
+      background: rgba(255,255,255,0.07);
+      margin: 20px 0;
+    }
+ 
+    /* NAV */
+    .nav-label {
+      font-size: 0.62rem;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--moss-light);
+      margin-bottom: 8px;
+      padding-left: 2px;
+    }
+ 
+    .nav a {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      padding: 7px 10px;
+      border-radius: var(--radius-sm);
+      color: var(--moss-muted);
+      text-decoration: none;
+      font-size: 0.83rem;
+      transition: all 0.18s;
+      margin-bottom: 2px;
+    }
+ 
+    .nav a:hover,
+    .nav a.active {
+      background: var(--moss-mid);
+      color: var(--moss-pale);
+    }
+ 
+    .nav a i { width: 14px; text-align: center; font-size: 0.75rem; }
+ 
+    /* CONTACT */
+    .sidebar-label {
+      font-size: 0.62rem;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--moss-light);
+      margin-bottom: 10px;
+      padding-left: 2px;
+    }
+ 
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--moss-muted);
+      font-size: 0.78rem;
+      margin-bottom: 7px;
+      text-decoration: none;
+      transition: color 0.18s;
+      line-height: 1.4;
+    }
+ 
+    .contact-item:hover { color: var(--moss-pale); }
+    .contact-item i { width: 13px; text-align: center; flex-shrink: 0; font-size: 0.72rem; }
+ 
+    /* SKILL BARS */
+    .skill-row { margin-bottom: 9px; }
+ 
+    .skill-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.72rem;
+      color: var(--moss-muted);
+      margin-bottom: 4px;
+    }
+ 
+    .skill-meta span:last-child { color: var(--moss-light); font-size: 0.67rem; }
+ 
+    .skill-bar {
+      height: 3px;
+      background: var(--moss-mid);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+ 
+    .skill-fill {
+      height: 100%;
+      border-radius: 2px;
+      background: var(--moss-muted);
+      width: 0%;
+      transition: width 1.1s cubic-bezier(.4,0,.2,1) 0.2s;
+    }
+ 
+    /* SOCIAL */
+    .social-row { display: flex; gap: 8px; }
+ 
+    .social-btn {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 11px;
+      border-radius: var(--radius-sm);
+      background: var(--moss-mid);
+      border: 1px solid rgba(255,255,255,0.06);
+      color: var(--moss-muted);
+      text-decoration: none;
+      font-size: 0.73rem;
+      transition: all 0.18s;
+      flex: 1;
+      justify-content: center;
+    }
+ 
+    .social-btn:hover { background: var(--moss-light); color: var(--moss-pale); }
+ 
+    /* ── MAIN ── */
+    .main {
+      flex: 1;
+      background: var(--sand-light);
+      padding: 48px 44px;
+      min-width: 0;
+    }
+ 
+    /* SECTION */
+    .section { margin-bottom: 52px; }
+ 
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+ 
+    .section-header h2 {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 1.45rem;
+      color: var(--ink);
+      font-weight: 400;
+      white-space: nowrap;
+    }
+ 
+    .section-line {
+      flex: 1;
+      height: 1px;
+      background: var(--sand-border);
+    }
+ 
+    /* ABOUT */
+    .about-text {
+      font-size: 0.9rem;
+      color: var(--ink-muted);
+      line-height: 1.85;
+    }
+ 
+    .about-text p { margin-bottom: 12px; }
+    .about-text p:last-child { margin-bottom: 0; }
+    .about-highlight { color: var(--ink); font-weight: 500; }
+ 
+    /* PROJECTS */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 14px;
+    }
+ 
+    .project-card {
+      background: var(--sand-mid);
+      border: 1px solid var(--sand-border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    }
+ 
+    .project-card:hover {
+      border-color: var(--moss-muted);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(45,58,46,0.12);
+    }
+ 
+    .project-img {
+      width: 100%;
+      height: 130px;
+      object-fit: cover;
+      display: block;
+      background: var(--sand-dark);
+    }
+ 
+    .project-img-placeholder {
+      width: 100%;
+      height: 130px;
+      background: var(--sand-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--ink-faint);
+      font-size: 1.8rem;
+    }
+ 
+    .project-body { padding: 14px; flex: 1; display: flex; flex-direction: column; }
+ 
+    .project-title {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--ink);
       margin-bottom: 5px;
     }
-
-    .job-title {
-      font-size: 1em;
-      font-weight: 300;
-      margin-bottom: 20px;
+ 
+    .project-desc {
+      font-size: 0.78rem;
+      color: var(--ink-muted);
+      line-height: 1.6;
+      flex: 1;
+      margin-bottom: 11px;
     }
-
-    .contact, .social-media {
-      margin-top: 20px;
-      width: 100%;
-      text-align: left;
+ 
+    .tag-row { display: flex; flex-wrap: wrap; gap: 5px; }
+ 
+    .tag {
+      font-size: 0.67rem;
+      font-weight: 500;
+      padding: 2px 8px;
+      border-radius: 20px;
     }
-
-    .contact h3, .social-media h3 {
-      margin-bottom: 10px;
-      font-size: 1.1em;
-      border-bottom: 1px solid #fff;
-      display: inline-block;
-      padding-bottom: 5px;
+ 
+    .tag-py  { background: var(--moss-dark);  color: var(--moss-pale); }
+    .tag-ml  { background: #3b2a1a;           color: #e8c99a; }
+    .tag-bi  { background: #1a2e20;           color: #a0d4b0; }
+    .tag-eng { background: #2a1f35;           color: #d0b8f0; }
+    .tag-default { background: var(--sand-dark); color: var(--ink-muted); border: 1px solid var(--sand-border); }
+ 
+    /* TIMELINE */
+    .timeline { position: relative; padding-left: 22px; }
+ 
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 4px;
+      top: 8px;
+      bottom: 8px;
+      width: 1px;
+      background: var(--sand-border);
     }
-
-    .contact p, .social-media p {
-      margin-bottom: 8px;
-      font-size: 0.95em;
-      color: #ddd;
+ 
+    .timeline-item { position: relative; margin-bottom: 30px; }
+    .timeline-item:last-child { margin-bottom: 0; }
+ 
+    .timeline-dot {
+      position: absolute;
+      left: -19px;
+      top: 6px;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 2px solid var(--sand-light);
+      box-shadow: 0 0 0 3px rgba(92,122,62,0.2);
     }
-
-    /* Conteúdo principal (direita) */
-    .main-content {
-      width: 70%;
-      padding: 20px;
+ 
+    .timeline-dot.past { background: var(--sand-dark); box-shadow: none; }
+ 
+    .timeline-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-bottom: 2px;
     }
-
-    .section {
-      margin-bottom: 30px;
+ 
+    .timeline-company {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--ink);
     }
-
-    .section h2 {
-      font-size: 1.4em;
-      margin-bottom: 10px;
+ 
+    .timeline-date {
+      font-size: 0.7rem;
+      color: var(--ink-faint);
+      white-space: nowrap;
+    }
+ 
+    .timeline-role {
+      font-size: 0.78rem;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+ 
+    .timeline-body { display: none; }
+    .timeline-item.open .timeline-body { display: block; }
+ 
+    .timeline-body ul { list-style: none; padding: 0; }
+ 
+    .timeline-body ul li {
+      font-size: 0.79rem;
+      color: var(--ink-muted);
+      padding-left: 14px;
       position: relative;
-      font-weight: 700;
-      color: #333;
+      margin-bottom: 5px;
+      line-height: 1.6;
     }
-
-    .section h2::after {
-      content: "";
-      width: 50px;
-      height: 3px;
-      background-color: #3498db;
+ 
+    .timeline-body ul li::before {
+      content: '—';
       position: absolute;
       left: 0;
-      bottom: -5px;
+      color: var(--sand-dark);
+      font-size: 0.7rem;
     }
-
-    .section p {
-      margin-top: 10px;
-      font-size: 0.95em;
+ 
+    .toggle-btn {
+      background: none;
+      border: none;
+      color: var(--ink-faint);
+      font-size: 0.71rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 0;
+      font-family: inherit;
+      transition: color 0.18s;
+      margin-top: 5px;
     }
-
-    .section ul {
-      list-style: none;
-      margin-top: 15px;
-    }
-
-    .section ul li {
-      margin-bottom: 10px;
-      padding-left: 20px;
-      position: relative;
-    }
-
-    .section ul li::before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      color: #3498db;
-    }
-
-    .project-preview {
-      width: 100%; /* Faz a imagem ocupar toda a largura do card */
-      max-height: 150px; /* Define uma altura máxima para a imagem */
-      object-fit: cover; /* Garante que a imagem seja redimensionada proporcionalmente */
-      margin-top: 10px; /* Espaço entre a descrição e a imagem */
-      border-radius: 5px; /* Opcional: Adiciona bordas arredondadas */
-    }
-
-    .projects-section {
-      max-height: 300px; /* Define a altura máxima da seção */
-      overflow-y: auto; /* Adiciona a barra de rolagem vertical */
-      padding-right: 10px; /* Espaço para evitar que o conteúdo fique muito próximo da barra */
-      border: 1px solid #ddd; /* Opcional: Adiciona uma borda para destacar a área */
-      border-radius: 5px; /* Opcional: Bordas arredondadas */
-      background-color: #f9f9f9; /* Opcional: Fundo claro */
-    }
-
-    /* Remove o sublinhado e ajusta o estilo do link */
-.card-link {
-  text-decoration: none;
-  color: inherit; /* Mantém a cor do texto original */
-  display: block; /* Faz o link ocupar todo o espaço do card */
-}
-
-/* Adiciona o efeito de hover no card */
-.card-link:hover .card {
-  transform: scale(1.05); /* Aumenta o tamanho do card */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Suaviza a transição */
-}
-    
-    .projects-section::-webkit-scrollbar {
-      width: 8px;
-    }
-    
-    .projects-section::-webkit-scrollbar-thumb {
-      background-color: #3498db;
-      border-radius: 4px;
-    }
-    
-    .projects-section::-webkit-scrollbar-track {
-      background-color: #f1f1f1;
-    }
-
-    .experience-section {
-      max-height: 200px; /* Define a altura máxima da seção */
-      overflow-y: auto; /* Adiciona a barra de rolagem vertical */
-      padding-right: 10px; /* Espaço para evitar que o conteúdo fique muito próximo da barra */
-      border: 1px solid #ddd; /* Opcional: Adiciona uma borda para destacar a área */
-      border-radius: 5px; /* Opcional: Bordas arredondadas */
-      background-color: #f9f9f9; /* Opcional: Fundo claro */
-    }
-
-    .experience-section::-webkit-scrollbar {
-      width: 8px;
-    }
-    
-    .experience-section::-webkit-scrollbar-thumb {
-      background-color: #3498db;
-      border-radius: 4px;
-    }
-    
-    .experience-section::-webkit-scrollbar-track {
-      background-color: #f1f1f1;
-    }
-
-    /* Grade para projetos ou habilidades */
-    .grid {
+ 
+    .toggle-btn:hover { color: var(--accent); }
+    .toggle-btn i { font-size: 0.58rem; transition: transform 0.2s; }
+    .timeline-item.open .toggle-btn i { transform: rotate(180deg); }
+ 
+    /* SKILLS GRID */
+    .skills-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 12px;
     }
-
-    .card {
-      background-color: #fafafa;
-      border: 1px solid #ddd;
-      border-radius: 6px;
+ 
+    .skill-card {
+      background: var(--sand-mid);
+      border: 1px solid var(--sand-border);
+      border-radius: var(--radius);
       padding: 15px;
     }
-
-    .card h4 {
-      margin-bottom: 10px;
-      font-size: 1.1em;
-      font-weight: 600;
-      color: #333;
+ 
+    .skill-card-title {
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      margin-bottom: 7px;
     }
-
-    .card p {
-      font-size: 0.9em;
-      color: #555;
+ 
+    .skill-card p {
+      font-size: 0.82rem;
+      color: var(--ink-muted);
+      line-height: 1.6;
     }
-
-    /* Responsividade */
+ 
+    /* CERTS & EDU */
+    .cert-list, .edu-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+ 
+    .cert-item, .edu-item {
+      background: var(--sand-mid);
+      border: 1px solid var(--sand-border);
+      border-radius: var(--radius-sm);
+      padding: 12px 15px;
+      font-size: 0.84rem;
+      color: var(--ink);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+ 
+    .cert-item i, .edu-item i {
+      color: var(--accent);
+      margin-top: 2px;
+      flex-shrink: 0;
+      font-size: 0.82rem;
+    }
+ 
+    .cert-item span, .edu-item span { line-height: 1.5; }
+ 
+    .cert-item small, .edu-item small {
+      display: block;
+      color: var(--ink-faint);
+      font-size: 0.73rem;
+      margin-top: 2px;
+    }
+ 
+    /* LANG */
+    .lang-row { display: flex; gap: 10px; flex-wrap: wrap; }
+ 
+    .lang-pill {
+      background: var(--sand-mid);
+      border: 1px solid var(--sand-border);
+      border-radius: 20px;
+      padding: 6px 16px;
+      font-size: 0.82rem;
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+ 
+    .lang-pill span {
+      color: var(--ink-faint);
+      font-size: 0.73rem;
+    }
+ 
+    /* RESPONSIVE */
     @media (max-width: 768px) {
-      .container {
-        flex-direction: column;
-      }
-      .sidebar, .main-content {
-        width: 100%;
-      }
+      .layout { flex-direction: column; }
+      .sidebar { width: 100%; height: auto; position: static; padding: 28px 20px; }
+      .nav { display: none; }
+      .main { padding: 28px 20px; }
+      .projects-grid { grid-template-columns: 1fr; }
     }
-
+ 
     @media print {
-      body {
-        background-color: #fff;
-        color: #000;
-      }
-      .sidebar {
-        display: none; /* Oculta a barra lateral no PDF */
-      }
-      .main-content {
-        width: 100%; /* Expande o conteúdo principal */
-      }
+      .sidebar { display: none; }
+      .main { padding: 0; }
+      .layout { max-width: 100%; box-shadow: none; }
+      body { background: #fff; }
+      .toggle-btn { display: none; }
+      .timeline-body { display: block !important; }
     }
-
+ 
+    /* FADE IN */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+ 
+    .section { animation: fadeUp 0.35s ease both; }
+    .section:nth-child(1) { animation-delay: 0.04s; }
+    .section:nth-child(2) { animation-delay: 0.10s; }
+    .section:nth-child(3) { animation-delay: 0.16s; }
+    .section:nth-child(4) { animation-delay: 0.22s; }
+    .section:nth-child(5) { animation-delay: 0.28s; }
+    .section:nth-child(6) { animation-delay: 0.34s; }
+    .section:nth-child(7) { animation-delay: 0.40s; }
   </style>
 </head>
 <body>
-
-  <div class="container">
-    
-    <!-- Barra lateral -->
-    <div class="sidebar">
-      <img 
-        src="src/Rafael Almeida1.png" 
-        alt="Foto de Perfil" 
-        class="profile-pic"
-      >
-      <div class="name-title">Rafael Almeida</div>
-      <div class="job-title">Engenharia Civil e de Custos | Análise e Ciência de Dados</div>
-
-      <div class="contact">
-        <h3>Contato</h3>
-        <p>
-          <i class="fas fa-phone-alt"></i> (11) 98930-9758
-        </p>
-        <p>
-          <i class="fas fa-envelope"></i> rafael.holanda.almeida@gmail.com
-        </p>
-        <p>
-          <i class="fas fa-map-marker-alt"></i> Peruíbe - SP
-        </p>
+ 
+<div class="layout">
+ 
+  <!-- ── SIDEBAR ── -->
+  <aside class="sidebar">
+ 
+    <div class="profile-block">
+      <div class="avatar-wrap">
+        <img src="src/Rafael Almeida1.png" alt="Rafael Almeida"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="avatar-initials" style="display:none">RA</div>
       </div>
-
-      <div class="social-media">
-        <h3>Redes Sociais</h3>
-        <p>
-          <a href="https://www.linkedin.com/in/rafael-almeida-417229205/" target="_blank" style="text-decoration: none;">
-            <i class="fab fa-linkedin" style="font-size: 24px; color: #0e76a8;"></i> LinkedIn
-          </a>
-        </p>
-        <p>
-          <a href="https://github.com/rafaeeo" target="_blank" style="text-decoration: none;">
-            <i class="fab fa-github" style="font-size: 24px; color: #333;"></i> GitHub
-          </a>
-        </p>
+      <div class="profile-name">Rafael Almeida</div>
+      <div class="profile-role">Analista de Dados<br>Engenharia Civil &amp; Custos</div>
+    </div>
+ 
+    <div class="divider"></div>
+ 
+    <nav class="nav">
+      <div class="nav-label">Navegação</div>
+      <a href="#sobre" class="active"><i class="fas fa-user"></i> Sobre Mim</a>
+      <a href="#projetos"><i class="fas fa-code-branch"></i> Projetos</a>
+      <a href="#experiencia"><i class="fas fa-briefcase"></i> Experiência</a>
+      <a href="#habilidades"><i class="fas fa-layer-group"></i> Habilidades</a>
+      <a href="#certificacoes"><i class="fas fa-certificate"></i> Certificações</a>
+      <a href="#educacao"><i class="fas fa-graduation-cap"></i> Educação</a>
+      <a href="#idiomas"><i class="fas fa-globe"></i> Idiomas</a>
+    </nav>
+ 
+    <div class="divider"></div>
+ 
+    <div style="margin-bottom:22px">
+      <div class="sidebar-label">Contato</div>
+      <a href="tel:+5511989309758" class="contact-item">
+        <i class="fas fa-phone-alt"></i> (11) 98930-9758
+      </a>
+      <a href="mailto:rafael.holanda.almeida@gmail.com" class="contact-item">
+        <i class="fas fa-envelope"></i> rafael.holanda.almeida@gmail.com
+      </a>
+      <span class="contact-item">
+        <i class="fas fa-map-marker-alt"></i> Peruíbe — SP
+      </span>
+    </div>
+ 
+    <div class="divider"></div>
+ 
+    <div style="margin-bottom:22px">
+      <div class="sidebar-label">Ferramentas principais</div>
+      <div class="skill-row">
+        <div class="skill-meta"><span>Power BI</span><span>Avançado</span></div>
+        <div class="skill-bar"><div class="skill-fill" data-width="92"></div></div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-meta"><span>Excel Avançado</span><span>Especialista</span></div>
+        <div class="skill-bar"><div class="skill-fill" data-width="95"></div></div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-meta"><span>Python / Pandas</span><span>Avançado</span></div>
+        <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-meta"><span>SQL</span><span>Avançado</span></div>
+        <div class="skill-bar"><div class="skill-fill" data-width="82"></div></div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-meta"><span>Machine Learning</span><span>Intermediário</span></div>
+        <div class="skill-bar"><div class="skill-fill" data-width="65"></div></div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-meta"><span>Streamlit / FastAPI</span><span>Intermediário</span></div>
+        <div class="skill-bar"><div class="skill-fill" data-width="60"></div></div>
       </div>
     </div>
-
-    <!-- Conteúdo principal -->
-    <div class="main-content">
-      
-      <!-- Seção: Sobre Mim -->
-      <div class="section">
+ 
+    <div class="divider"></div>
+ 
+    <div class="sidebar-label">Redes</div>
+    <div class="social-row">
+      <a href="https://www.linkedin.com/in/rafael-almeida-417229205/" target="_blank" class="social-btn">
+        <i class="fab fa-linkedin"></i> LinkedIn
+      </a>
+      <a href="https://github.com/rafaeeo" target="_blank" class="social-btn">
+        <i class="fab fa-github"></i> GitHub
+      </a>
+    </div>
+ 
+  </aside>
+ 
+  <!-- ── MAIN ── -->
+  <main class="main">
+ 
+    <!-- SOBRE MIM -->
+    <section class="section" id="sobre">
+      <div class="section-header">
         <h2>Sobre Mim</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="about-text">
         <p>
-          Analista de Dados com background em Engenharia Civil e mais de 10 anos de experiência em ambientes de alta complexidade técnica — de grandes obras de infraestrutura a projetos de monitoramento meteo-oceanográfico e Customer Success.
-
-Atuo na interseção entre dados e decisões estratégicas, desenvolvendo pipelines, dashboards executivos e modelos preditivos com Python, SQL, Power BI e Streamlit. Meu diferencial está em traduzir dados em linguagem de negócio: já apresentei resultados para diretorias em empresas como Bureau Veritas, Grupo EcoRodovias e HidroMares by SGS, onde aplico analytics para simulação de cenários, automação de cálculos e estruturação de propostas comerciais.
-
-Domino inglês em nível avançado (C1) e tenho certificações em Google Cloud e Salesforce Development, o que me permite atuar com times globais e stacks modernas.
+          <span class="about-highlight">Analista de Dados com background em Engenharia Civil</span> e mais de 10 anos de experiência em ambientes de alta complexidade técnica — de grandes obras de infraestrutura a projetos de monitoramento meteo-oceanográfico e Customer Success.
+        </p>
+        <p>
+          Atuo na interseção entre dados e decisões estratégicas, desenvolvendo pipelines, dashboards executivos e modelos preditivos com <span class="about-highlight">Python, SQL, Power BI e Streamlit</span>. Meu diferencial está em traduzir dados em linguagem de negócio: já apresentei resultados para diretorias em empresas como Bureau Veritas, Grupo EcoRodovias e HidroMares by SGS, onde aplico analytics para simulação de cenários, automação de cálculos e estruturação de propostas comerciais.
+        </p>
+        <p>
+          Domino <span class="about-highlight">inglês em nível avançado (C1)</span> e tenho certificações em Google Cloud e Salesforce Development, o que me permite atuar com times globais e stacks modernas.
         </p>
       </div>
-
-<!-- Seção: Projetos -->
-<div class="section projects-section">
-  <h2>Principais Projetos</h2>
-  <div class="grid">
-    <a href="https://github.com/rafaeeo/ecommerce_dash_PBI" target="_blank" class="card-link">
-      <div class="card">
-        <h4>Projeto 1: Análise de Vendas</h4>
-        <p>
-          Dashboard interativo em Power BI para acompanhar indicadores de vendas, incluindo 
-          faturamento, ticket médio, taxa de crescimento e visualização dos dados. <br/>
-          <strong>Ferramentas:</strong> Power BI, Excel.
-        </p>
-        <img src="src/preview1.jpg" alt="Preview do Projeto 1" class="project-preview">
+    </section>
+ 
+    <!-- PROJETOS -->
+    <section class="section" id="projetos">
+      <div class="section-header">
+        <h2>Projetos</h2>
+        <div class="section-line"></div>
       </div>
-    </a>
-
-    <a href="https://github.com/rafaeeo/Producao_Sementes" target="_blank" class="card-link">
-      <div class="card">
-        <h4>Projeto 2: Análise Agro</h4>
-        <p>
-          Análise detalhada e dashboard interativo dos dados de produção de sementes que inclui a exploração de variabilidade, a distribuição dos dados e sugestões para planejamento e intervenção. <br/>
-          <strong>Ferramentas:</strong> Python, scikit-learn, Pandas, SQL.
-        </p>
-        <img src="src/preview2.jpg" alt="Preview do Projeto 2" class="project-preview">
+      <div class="projects-grid">
+ 
+        <a href="https://github.com/rafaeeo/turnover_dashboard" target="_blank" class="project-card">
+          <img src="src/preview5.jpg" alt="Turnover Dashboard" class="project-img"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="project-img-placeholder" style="display:none"><i class="fas fa-chart-line"></i></div>
+          <div class="project-body">
+            <div class="project-title">Dashboard de Turnover + ML</div>
+            <div class="project-desc">Dashboard interativo e preditivo com RandomForest para análise de turnover em RH. Estrutura modular com simulador de perfil para previsão de saída.</div>
+            <div class="tag-row">
+              <span class="tag tag-py">Python</span>
+              <span class="tag tag-ml">scikit-learn</span>
+              <span class="tag tag-py">Streamlit</span>
+              <span class="tag tag-py">Pandas</span>
+            </div>
+          </div>
+        </a>
+ 
+        <a href="https://github.com/rafaeeo/ecommerce_dash_PBI" target="_blank" class="project-card">
+          <img src="src/preview1.jpg" alt="E-commerce Power BI" class="project-img"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="project-img-placeholder" style="display:none"><i class="fas fa-shopping-cart"></i></div>
+          <div class="project-body">
+            <div class="project-title">Dashboard E-commerce (Power BI)</div>
+            <div class="project-desc">Dashboard interativo de vendas com faturamento, ticket médio e taxa de crescimento. Dados de e-commerce brasileiro.</div>
+            <div class="tag-row">
+              <span class="tag tag-bi">Power BI</span>
+              <span class="tag tag-default">Excel</span>
+            </div>
+          </div>
+        </a>
+ 
+        <a href="https://github.com/rafaeeo/House_Prices" target="_blank" class="project-card">
+          <img src="src/preview4.jpg" alt="House Prices" class="project-img"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="project-img-placeholder" style="display:none"><i class="fas fa-home"></i></div>
+          <div class="project-body">
+            <div class="project-title">Previsão de Preços de Imóveis — SP</div>
+            <div class="project-desc">Modelagem preditiva com pré-processamento, análise exploratória e regressão aplicados ao mercado imobiliário de São Paulo.</div>
+            <div class="tag-row">
+              <span class="tag tag-py">Python</span>
+              <span class="tag tag-ml">scikit-learn</span>
+              <span class="tag tag-py">Seaborn</span>
+            </div>
+          </div>
+        </a>
+ 
+        <a href="https://github.com/rafaeeo/Concrete_prediction" target="_blank" class="project-card">
+          <img src="src/preview3.jpg" alt="Concrete Prediction" class="project-img"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="project-img-placeholder" style="display:none"><i class="fas fa-cubes"></i></div>
+          <div class="project-body">
+            <div class="project-title">Predição de Resistência do Concreto</div>
+            <div class="project-desc">Regressão linear múltipla aplicada ao dataset UCI Concrete Compressive Strength. Background de engenharia aplicado à ciência de dados.</div>
+            <div class="tag-row">
+              <span class="tag tag-py">Python</span>
+              <span class="tag tag-ml">Regressão</span>
+              <span class="tag tag-eng">Engenharia</span>
+            </div>
+          </div>
+        </a>
+ 
+        <a href="https://github.com/rafaeeo/Producao_Sementes" target="_blank" class="project-card">
+          <img src="src/preview2.jpg" alt="Análise Agro" class="project-img"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="project-img-placeholder" style="display:none"><i class="fas fa-seedling"></i></div>
+          <div class="project-body">
+            <div class="project-title">Análise de Produção de Sementes</div>
+            <div class="project-desc">Análise estatística e dashboard de variabilidade em dados agronômicos, com sugestões para planejamento e intervenção.</div>
+            <div class="tag-row">
+              <span class="tag tag-py">Python</span>
+              <span class="tag tag-py">Pandas</span>
+              <span class="tag tag-default">SQL</span>
+            </div>
+          </div>
+        </a>
+ 
       </div>
-    </a>
-
-    <a href="https://github.com/rafaeeo/Concrete_prediction" target="_blank" class="card-link">
-      <div class="card">
-        <h4>Projeto 3: Predição da Resistência à Compressão do Concreto</h4>
-        <p>
-          Neste projeto analisei o dataset "Concrete Compressive Strength" do UCI Machine Learning Repository para entender os fatores que influenciam a resistência à compressão do concreto e construir um modelo de regressão linear múltipla para prever essa resistência. <br/>
-          <strong>Ferramentas:</strong> Python, scikit-learn, Pandas, MatPlotLib.
-        </p>
-        <img src="src/preview3.jpg" alt="Preview do Projeto 3" class="project-preview">
+    </section>
+ 
+    <!-- EXPERIÊNCIA -->
+    <section class="section" id="experiencia">
+      <div class="section-header">
+        <h2>Experiência Profissional</h2>
+        <div class="section-line"></div>
       </div>
-    </a>
-
-    <a href="https://github.com/rafaeeo/House_Prices" target="_blank" class="card-link">
-      <div class="card">
-        <h4>Projeto 4: Análise de Fatores que Influenciam os Preços de Imóveis</h4>
-        <p>
-          Este projeto utiliza o dataset "House Prices - São Paulo" do Kaggle para identificar e analisar os fatores que influenciam os preços dos imóveis na cidade de São Paulo. O objetivo é aplicar técnicas de pré-processamento, análise exploratória, modelagem preditiva e avaliação para construir um modelo que explique e preveja os preços dos imóveis. <br/>
-          <strong>Ferramentas:</strong> Python, scikit-learn, Pandas, Seaborn.
-        </p>
-        <img src="src/preview4.jpg" alt="Preview do Projeto 4" class="project-preview">
+      <div class="timeline">
+ 
+        <div class="timeline-item open">
+          <div class="timeline-dot"></div>
+          <div class="timeline-header">
+            <span class="timeline-company">HidroMares by SGS</span>
+            <span class="timeline-date">2025 — atual</span>
+          </div>
+          <div class="timeline-role">Orçamentista Sênior</div>
+          <div class="timeline-body">
+            <ul>
+              <li>Elaboração de orçamentos técnicos e comerciais para soluções meteo-oceanográficas e monitoramento em tempo real.</li>
+              <li>Levantamento de custos diretos e indiretos (mão de obra, embarcações, equipamentos e serviços terceirizados).</li>
+              <li>Estruturação de propostas comerciais com análise de riscos, premissas e condições contratuais.</li>
+              <li>Consolidação de históricos de custos para aumentar previsibilidade e reduzir tempo de resposta.</li>
+              <li>Analytics (Excel, Power BI, SQL, Python) para simulação de cenários, automação de cálculos e apoio à decisão.</li>
+              <li>Apresentação executiva de resultados para gestores e clientes.</li>
+            </ul>
+            <div class="tag-row" style="margin-top:10px">
+              <span class="tag tag-bi">Power BI</span>
+              <span class="tag tag-py">Python</span>
+              <span class="tag tag-default">SQL</span>
+              <span class="tag tag-default">Excel Avançado</span>
+            </div>
+          </div>
+          <button class="toggle-btn" onclick="toggleItem(this)">
+            ver menos <i class="fas fa-chevron-up"></i>
+          </button>
+        </div>
+ 
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-header">
+            <span class="timeline-company">SRD Customer Success &amp; Agile Culture</span>
+            <span class="timeline-date">2024 — atual</span>
+          </div>
+          <div class="timeline-role">Analista de Dados Freelancer</div>
+          <div class="timeline-body">
+            <ul>
+              <li>Definição e monitoramento de KPIs, SLAs e métricas para projetos de TI.</li>
+              <li>Coleta, limpeza e integração de dados de múltiplas fontes (Jira, ServiceNow, SQL, APIs).</li>
+              <li>Desenvolvimento de dashboards e relatórios executivos em Power BI, Tableau e Google Data Studio.</li>
+              <li>Automação de rotinas analíticas com Python, SQL e ETL.</li>
+              <li>Apoio a squads ágeis e áreas de negócio, traduzindo requisitos em soluções de dados.</li>
+              <li>Análises preditivas para previsão de demandas e identificação de gargalos.</li>
+              <li>Storytelling com dados para públicos técnicos e executivos.</li>
+            </ul>
+            <div class="tag-row" style="margin-top:10px">
+              <span class="tag tag-py">Python</span>
+              <span class="tag tag-bi">Power BI</span>
+              <span class="tag tag-default">Tableau</span>
+              <span class="tag tag-py">Streamlit</span>
+              <span class="tag tag-default">Git</span>
+            </div>
+          </div>
+          <button class="toggle-btn" onclick="toggleItem(this)">
+            ver mais <i class="fas fa-chevron-down"></i>
+          </button>
+        </div>
+ 
+        <div class="timeline-item">
+          <div class="timeline-dot past"></div>
+          <div class="timeline-header">
+            <span class="timeline-company">Bureau Veritas Group</span>
+            <span class="timeline-date">2023</span>
+          </div>
+          <div class="timeline-role">Analista de Dados — Strategic Sourcing</div>
+          <div class="timeline-body">
+            <ul>
+              <li>Análise de dados de compras para identificar tendências e padrões.</li>
+              <li>Dashboards e KPIs em Excel, SQL e Power BI para monitoramento de gastos.</li>
+              <li>ETL dos dados de pesquisa e governança do banco de dados.</li>
+              <li>Suporte à equipe de compras e relacionamento com fornecedores nacionais e internacionais.</li>
+            </ul>
+            <div class="tag-row" style="margin-top:10px">
+              <span class="tag tag-bi">Power BI</span>
+              <span class="tag tag-default">SQL</span>
+              <span class="tag tag-default">Excel</span>
+            </div>
+          </div>
+          <button class="toggle-btn" onclick="toggleItem(this)">
+            ver mais <i class="fas fa-chevron-down"></i>
+          </button>
+        </div>
+ 
+        <div class="timeline-item">
+          <div class="timeline-dot past"></div>
+          <div class="timeline-header">
+            <span class="timeline-company">Grupo EcoRodovias</span>
+            <span class="timeline-date">2020 — 2022</span>
+          </div>
+          <div class="timeline-role">Analista de Engenharia Civil</div>
+          <div class="timeline-body">
+            <ul>
+              <li>Análises quantitativas de viabilidade e performance (Stage Gates) com dados financeiros e técnicos.</li>
+              <li>Curvas ABC, Curvas S e histogramas integrados a painéis de controle.</li>
+              <li>Manutenção de banco de dados de preços de insumos com consultas e validações recorrentes.</li>
+              <li>Relatórios técnicos que apoiavam decisões estratégicas da diretoria.</li>
+            </ul>
+          </div>
+          <button class="toggle-btn" onclick="toggleItem(this)">
+            ver mais <i class="fas fa-chevron-down"></i>
+          </button>
+        </div>
+ 
+        <div class="timeline-item">
+          <div class="timeline-dot past"></div>
+          <div class="timeline-header">
+            <span class="timeline-company">Santo Antonio Energia</span>
+            <span class="timeline-date">2015 — 2019</span>
+          </div>
+          <div class="timeline-role">Assistente Técnico de Engenharia Civil</div>
+          <div class="timeline-body">
+            <ul>
+              <li>Estimativas orçamentárias com análise de dados históricos e simulações de cenários.</li>
+              <li>Banco de dados de projetos técnicos e contratos da fase final da UHE.</li>
+              <li>Análises hidrológicas com séries temporais de vazão do Rio Madeira.</li>
+              <li>Extração e interpretação de dados técnicos para laudos e defesas em ações judiciais.</li>
+            </ul>
+          </div>
+          <button class="toggle-btn" onclick="toggleItem(this)">
+            ver mais <i class="fas fa-chevron-down"></i>
+          </button>
+        </div>
+ 
+        <div class="timeline-item">
+          <div class="timeline-dot past"></div>
+          <div class="timeline-header">
+            <span class="timeline-company">Conp Construtora e Incorporadora</span>
+            <span class="timeline-date">2012 — 2013</span>
+          </div>
+          <div class="timeline-role">Analista de Orçamento e Planejamento</div>
+          <div class="timeline-body">
+            <ul>
+              <li>Modelos de orçamento baseados em dados históricos e comparativos de mercado.</li>
+              <li>Dashboards físico-financeiros com cronogramas e curva S.</li>
+              <li>Controle de indicadores de produtividade e custos durante execução de obras.</li>
+            </ul>
+          </div>
+          <button class="toggle-btn" onclick="toggleItem(this)">
+            ver mais <i class="fas fa-chevron-down"></i>
+          </button>
+        </div>
+ 
       </div>
-    </a>
-
-    <a href="https://github.com/rafaeeo/turnover_dashboard" target="_blank" class="card-link">
-      <div class="card">
-        <h4>Projeto 5: Análise de Turnover</h4>
-        <p>
-          Este projeto é um dashboard interativo e preditivo desenvolvido em Python com Streamlit, ideal para análise de turnover em times de RH. <br/>
-          <strong>Ferramentas:</strong> Python, scikit-learn, Pandas, Streamlit, Excel.
-        </p>
-        <img src="src/preview5.jpg" alt="Preview do Projeto 5" class="project-preview">
-      </div>
-    </a>
-  </div>
-</div>
-      
-      <!-- Seção: Experiência de Trabalho -->
-<div class="section experience-section">
-  <h2>Experiência Profissional</h2>
-  <ul>
-    <li>
-      <strong>HidroMares by SGS</strong> (2025 - atual)
-      <br />
-      <strong>Orçamentista Senior</strong>
-      <br /> 
-Principais atividades:
-      <ul>
-        <li>Elaboração de orçamentos técnicos e comerciais para soluções meteo-oceanográficas e monitoramento em tempo real.</li>
-        <li>Levantamento de custos diretos e indiretos (mão de obra, embarcações, equipamentos e serviços terceirizados).</li>
-        <li>Estruturação de propostas comerciais competitivas, com análise de riscos, premissas e condições contratuais.</li>
-        <li>Consolidação de históricos de custos para aumentar previsibilidade e reduzir tempo de resposta.</li>
-        <li>Uso de dados e analytics (Excel, Power BI, SQL, Python) para simulação de cenários, automação de cálculos e apoio à decisão.</li>
-        <li>Apresentação executiva de resultados para gestores e clientes, traduzindo dados em insights estratégicos.</li>
-        Principais tecnologias e ferramentas utilizadas: Python, SQL, Power BI, Excel Avançado.
-      </ul>
-    </li>
-    <li>
-      <strong>SRD Customer Success & Agile Culture</strong> (2024 - atual)
-      <br />
-      <strong>Analista de Dados Freelancer</strong>
-      <br />
-      Atuação consultiva em projetos de dados e analytics para Customer Success e TI, com foco em automação, análise de métricas e cultura ágil.
-Principais atividades:
-      <ul>
-        <li>Definição e monitoramento de KPIs, SLAs e métricas para projetos de TI.</li>
-        <li>Coleta, limpeza e integração de dados de múltiplas fontes (Jira, ServiceNow, ITSM, SQL, Excel, APIs).</li>
-        <li>Desenvolvimento de dashboards e relatórios executivos em Power BI, Tableau e Google Data Studio.</li>
-        <li>Automação de rotinas analíticas e geração de relatórios para acompanhamento de demandas, backlog e produtividade.</li>
-        <li>Apoio a squads ágeis e áreas de negócio, traduzindo requisitos em soluções de dados e insights para tomada de decisão.</li>
-        <li>Implementação de scripts e pipelines de dados utilizando Python, SQL e ferramentas ETL.</li>
-        <li>Realização de análises preditivas para previsão de demandas, identificação de gargalos e otimização de entregas.</li>
-        <li>Apresentação de resultados e storytelling com dados para públicos técnicos e executivos.</li>
-        <li>Monitoramento e análise de indicadores de desempenho.</li>
-        Principais tecnologias e ferramentas utilizadas: Python, SQL, Power BI, Tableau, Streamlit, Excel Avançado, Git.
-      </ul>
-    </li>
-    <li>
-      <strong>Bureau Veritas Group</strong> (2023 - 2023)
-      <br />
-      <strong>Analista de Dados de Strategic Sourcing</strong>
-      <br />
-      Implementação de iniciativas de sourcing estratégico com dados para o setor de Compras. 
-      Principais responsabilidades:
-      <ul>
-        <li>Análise de dados de compras para identificar tendências e padrões.</li>
-        <li>Elaboração e gestão de dashboards e KPIs em Excel, SQL e Power BI para monitoramento de gastos com contratações de serviços e equipamentos.</li>
-        <li>Pesquisa de mercado para identificar fornecedores e preços competitivos.</li>
-        <li>ETL dos dados de pesquisa e governança do Banco de Dados.</li>
-        <li>Análise de custos e elaboração de relatórios em Excel.</li>
-        <li>Suporte à equipe de compras na tomada de decisões.</li>
-        <li>Relacionamento com fornecedores nacionais e internacionais.</li>
-        <li>Negociação de contratos e condições de compra.</li>
-        <li>Monitoramento e análise de indicadores de desempenho.</li>
-      </ul>
-    </li>
-    <li>
-      <strong>Grupo EcoRodovias</strong> (2020 - 2022)
-      <br />
-      <strong>Analista de Engenharia Civil</strong>
-      <br />
-      Principais responsabilidades:
-      <ul>
-        <li>Realizava análises quantitativas de viabilidade e performance (Stage Gates) com base em dados financeiros e técnicos.</li>
-        <li>Desenvolvia Curvas ABC, Curvas S e histogramas para acompanhamento de obras, integrando visualizações a painéis de controle.</li>
-        <li>Mantinha e atualizava banco de dados de preços de insumos, estruturando consultas e validações recorrentes.</li>
-        <li>Criava controles internos e relatórios técnicos que apoiavam decisões estratégicas da diretoria de engenharia.</li>
-        <li>Atuava com extração, estruturação e análise de dados técnicos para elaboração de documentos e pareceres.</li>
-      </ul>
-    </li>
-    <li>
-      <strong>Santo Antonio Energia</strong> (2015 - 2019)
-      <br />
-      <strong>Assistente Técnico de Engenharia Civil</strong>
-      <br />
-      Principais responsabilidades:
-      <ul>
-        <li>Responsável por estimativas orçamentárias baseadas em análise de dados históricos e simulações de cenários.</li>
-        <li>Estruturava e controlava banco de dados de projetos técnicos e contratos da fase final da construção da UHE.</li>
-        <li>Desenvolvia análises hidrológicas com base em séries temporais de vazão do Rio Madeira, apoiando decisões operacionais.</li>
-        <li>Atuava na extração e interpretação de dados técnicos para embasar pareceres, laudos e defesas técnicas em ações judiciais.</li>
-      </ul>
-    </li>
-    <li>
-      <strong>Even Construtora e Incorporadora</strong> (2015 - 2015)
-      <br />
-      <strong>Estagiário de Obras</strong>
-<br />
-Principais responsabilidades:
-<ul>
-  <li>Conferir serviços de obra conforme padrões técnicos e liberar próximas etapas.</li>
-  <li>Monitorar e controlar atividades com a equipe de operação e gestão da obra.</li>
-  <li>Preparar etapas e recursos necessários para condução dos trabalhos sob orientação do engenheiro.</li>
-</ul>
-    </li>
-    <li>
-      <strong>Conp Construtora e Incorporadora</strong> (2012 - 2013)
-      <br />
-      <strong>Analista de Orçamento e Planejamento</strong>
-<br />
-<ul>
-  <li>Criava modelos de orçamento com base em dados históricos e comparativos de mercado, em Excel.</li>
-  <li>Realizava análises de viabilidade financeira e técnica para propostas comerciais.</li>
-  <li>Construía dashboards de acompanhamento físico-financeiro com base em cronogramas e curva S.</li>
-  <li>Executava controle de indicadores de produtividade e custos durante execução de obras.</li>
-  <li>Aplicava raciocínio analítico para estimativas de materiais e mão de obra, reduzindo retrabalho e custos.</li>
-  <li>Realizava visitas técnicas, acompanhamento de obras e atendimento a clientes.</li>
-</ul>
-    </li>
-    <li>
-      <strong>São Paulo Turismo S.A.</strong> (2011 - 2012)
-      <br />
-      <strong>Estagiário de Engenharia Civil</strong>
-<br />
-Principais responsabilidades:
-<ul>
-  <li>Medição e acompanhamento de projetos e obras de acessibilidade no Anhembi Parque.</li>
-  <li>Elaborar cronogramas, memoriais descritivos e planilhas de orçamento (tabela EDIF).</li>
-  <li>Realizar levantamentos, vistorias e especificação de materiais para novas construções.</li>
-  <li>Elaborar e conferir projetos hidráulicos, croquis eletrônicos e plantas de edificações.</li>
-  <li>Atuar em logística e estruturas de grandes eventos (GPBR Fórmula 1, Carnaval de SP, etc.).</li>
-</ul>
-    </li>
-  </ul>
-</div>
-
-      <!-- Seção: Habilidades -->
-      <div class="section">
+    </section>
+ 
+    <!-- HABILIDADES -->
+    <section class="section" id="habilidades">
+      <div class="section-header">
         <h2>Habilidades</h2>
-        <div class="grid">
-          <div class="card">
-            <h4>Ferramentas de Análise</h4>
-            <p>Python, SQL, Excel, Power BI</p>
-          </div>
-          <div class="card">
-            <h4>Ciência de Dados</h4>
-            <p>Estatística, Análises de Regressão, Data Visualization</p>
-          </div>
-          <div class="card">
-            <h4>Metodologias</h4>
-            <p>Agile (Scrum), Kanban, CRISP-DM</p>
-          </div>
-          <div class="card">
-            <h4>Soft Skills</h4>
-            <p>Comunicação, Trabalho em Equipe, Resolução de Problemas</p>
-          </div>
-          <div class="card">
-            <h4>SalesForce Development</h4>
-            <p>Apex, Lightning Web Component, Flow Builder</p>
-          </div>
-          <div class="card">
-            <h4>Engenharia</h4>
-            <p>Orçamentos, Gestão de Contratos, Suprimentos</p>
-          </div>
+        <div class="section-line"></div>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-card-title">Análise &amp; Visualização</div>
+          <p>Python, SQL, Excel Avançado, Power BI, Tableau, Google Data Studio</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-title">Ciência de Dados</div>
+          <p>Estatística, Regressão, Machine Learning, CRISP-DM, scikit-learn, Pandas, NumPy</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-title">Engenharia de Dados</div>
+          <p>ETL, Pipelines, APIs, Streamlit, FastAPI, Docker, Git, Google Cloud, AWS</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-title">Metodologias</div>
+          <p>Agile (Scrum), Kanban, CRISP-DM, storytelling com dados</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-title">Salesforce Development</div>
+          <p>Apex, Lightning Web Component, Flow Builder</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-title">Engenharia Civil</div>
+          <p>Orçamentos, Gestão de Contratos, Suprimentos, Viabilidade Técnica</p>
         </div>
       </div>
-
-      <!-- Seção: Certificações -->
-<div class="section">
-  <h2>Certificações</h2>
-  <ul>
-    <li>Data Analytics & Power BI (Preditiva Analytics)</li>
-    <li>Google Cloud Platform: Inteligência Artificial (Fundação FAT)</li>
-    <li>Salesforce Development (Fundação FAT)</li>
-    <li>Excel para Análise de Dados (Preditiva Analytics)</li>
-  </ul>
+    </section>
+ 
+    <!-- CERTIFICAÇÕES -->
+    <section class="section" id="certificacoes">
+      <div class="section-header">
+        <h2>Certificações</h2>
+        <div class="section-line"></div>
+      </div>
+      <ul class="cert-list">
+        <li class="cert-item">
+          <i class="fas fa-certificate"></i>
+          <span>Data Analytics &amp; Power BI<small>Preditiva Analytics</small></span>
+        </li>
+        <li class="cert-item">
+          <i class="fab fa-google"></i>
+          <span>Google Cloud Platform: Inteligência Artificial<small>Fundação FAT</small></span>
+        </li>
+        <li class="cert-item">
+          <i class="fab fa-salesforce"></i>
+          <span>Salesforce Development<small>Fundação FAT</small></span>
+        </li>
+        <li class="cert-item">
+          <i class="fas fa-table"></i>
+          <span>Excel para Análise de Dados<small>Preditiva Analytics</small></span>
+        </li>
+      </ul>
+    </section>
+ 
+    <!-- EDUCAÇÃO -->
+    <section class="section" id="educacao">
+      <div class="section-header">
+        <h2>Educação</h2>
+        <div class="section-line"></div>
+      </div>
+      <ul class="edu-list">
+        <li class="edu-item">
+          <i class="fas fa-university"></i>
+          <span>
+            <strong>Engenharia Civil</strong>
+            <small>Instituto Mauá de Tecnologia (2009–2017) · Conclusão: Universidade Nove de Julho (2019/2020)</small>
+            <small>Estatística Aplicada · Cálculo Numérico · Gestão de Projetos</small>
+          </span>
+        </li>
+        <li class="edu-item">
+          <i class="fas fa-laptop-code"></i>
+          <span>
+            <strong>Curso de Ciência de Dados</strong>
+            <small>Preditiva Analytics (2024–2025)</small>
+            <small>Machine Learning · Visualização de Dados · Big Data</small>
+          </span>
+        </li>
+      </ul>
+    </section>
+ 
+    <!-- IDIOMAS -->
+    <section class="section" id="idiomas">
+      <div class="section-header">
+        <h2>Idiomas</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="lang-row">
+        <div class="lang-pill">🇧🇷 Português <span>Nativo</span></div>
+        <div class="lang-pill">🇺🇸 Inglês <span>Avançado · C1</span></div>
+        <div class="lang-pill">🇪🇸 Espanhol <span>Intermediário</span></div>
+      </div>
+    </section>
+ 
+  </main>
 </div>
-
-<!-- Seção: Educação -->
-<div class="section">
-  <h2>Educação</h2>
-  <ul>
-    <li>
-      <strong>Engenharia Civil</strong> - Instituto Mauá de Tecnologia (2009 - 2017)<br>
-      <small><i>Conclusão: Universidade Nove de Julho – 2019/2020 (transferência por motivos financeiros para conclusão das matérias Hidráulica e Estruturas Metálicas)</i></small><br>
-      Disciplinas de destaque: Estatística Aplicada, Cálculo Numérico, Gestão de Projetos
-    </li>
-    <li>
-      <strong>Curso de Ciência de Dados</strong> - Preditiva Analytics (2024 - 2025)
-      <br />
-      Disciplinas de destaque: Machine Learning, Visualização de Dados, Big Data.
-    </li>
-  </ul>
-</div>
-
-<!-- Seção: Idiomas -->
-<div class="section">
-  <h2>Idiomas</h2>
-  <ul>
-    <li>Português: Nativo</li>
-    <li>Inglês: Avançado (C1 - leitura, escrita e conversação fluente)</li>
-    <li>Espanhol: Intermediário</li>
-  </ul>
-</div>
-
-    </div>
-  </div>
-
+ 
+<script>
+  function toggleItem(btn) {
+    const item = btn.closest('.timeline-item');
+    const isOpen = item.classList.toggle('open');
+    btn.innerHTML = isOpen
+      ? 'ver menos <i class="fas fa-chevron-up"></i>'
+      : 'ver mais <i class="fas fa-chevron-down"></i>';
+  }
+ 
+  const fills = document.querySelectorAll('.skill-fill');
+  const barObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.width = e.target.dataset.width + '%';
+        barObserver.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  fills.forEach(f => barObserver.observe(f));
+ 
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav a');
+  const scrollObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        navLinks.forEach(a => a.classList.remove('active'));
+        const link = document.querySelector(`.nav a[href="#${e.target.id}"]`);
+        if (link) link.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+  sections.forEach(s => scrollObserver.observe(s));
+</script>
+ 
 </body>
 </html>
